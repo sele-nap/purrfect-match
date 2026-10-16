@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: purrfect-match
+  profiles:
+    default: dev
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate # schema is owned by Flyway, never by Hibernate
+  mvc:
+    problemdetails:
+      enabled: true
+
+server:
+  shutdown: graceful
+  error:
+    include-stacktrace: never
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      probes:
+        enabled: true
